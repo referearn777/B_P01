@@ -50,7 +50,7 @@ export function Contact() {
 
     try {
       // ✅ Step 3: Send data to backend
-      const response = await fetch("http://localhost:5000/api/bookings", {
+      const response = await fetch("https://b-p01new.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bookingData),
