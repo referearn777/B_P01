@@ -43,8 +43,8 @@
             "react-resizable-panels": "^2.1.7",
             "recharts": "^2.15.2",
             "sonner": "^2.0.3",
+            "sooner": "^1.1.1",
             "tailwind-merge": "*",
-            "sooner": "^1.1.4",
             "vaul": "^1.1.2"
       },
       "devDependencies": {
@@ -52,7 +52,7 @@
             "@types/react": "^19.2.2",
             "@types/react-dom": "^19.2.2",
             "@vitejs/plugin-react-swc": "^3.10.2",
-            "vite": "6.3.5"
+            "vite": "^6.3.5"
       },
       "scripts": {
             "dev": "vite",
