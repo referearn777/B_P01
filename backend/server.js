@@ -2,7 +2,6 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
 // Load environment variables
@@ -13,23 +12,18 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: process.env.ALLOWED_ORIGIN || "*",
+    origin: process.env.ALLOWED_ORIGIN || "https://alankrithanaturals.vercel.app",
   })
 );
 app.use(express.json());
-app.use(bodyParser.json());
-
 // ✅ Connect to MongoDB Atlas or local DB
 const mongoURI =
   process.env.MONGO_URI || "mongodb://127.0.0.1:27017/beauty_salon";
 
 mongoose
-  .connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(mongoURI)
   .then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.log("❌ MongoDB connection error:", err));
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // Schema
 const bookingSchema = new mongoose.Schema({
