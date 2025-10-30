@@ -50,13 +50,21 @@ export function Contact() {
 
     try {
       // ✅ Step 3: Send data to backend
-      const response = await fetch("https://b-p01new.onrender.com", {
+      const response = await fetch("https://b-p01new.onrender.com/api/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bookingData),
       });
 
-      const data = await response.json();
+      // ✅ safer JSON parsing
+let data;
+try {
+  data = await response.json();
+} catch {
+  const text = await response.text();
+  console.error("Non-JSON response:", text);
+  data = { message: "Server did not return JSON" };
+}
 
       // ✅ Step 4: Handle response
       if (response.ok) {
