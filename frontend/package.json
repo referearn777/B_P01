@@ -54,12 +54,12 @@
     "@vitejs/plugin-react-swc": "^3.10.2",
     "vite": "^6.3.5"
   },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "prebuild": "chmod +x node_modules/.bin/vite"
-  },
+ "scripts": {
+  "dev": "vite",
+  "prebuild": "chmod +x ./node_modules/.bin/vite || true",
+  "build": "vite build",
+  "preview": "vite preview"
+},
   "engines": {
     "node": "22"
   }
