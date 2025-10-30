@@ -23,7 +23,8 @@ app.use(morgan("tiny"));    // Log basic request info
 // ✅ CORS Configuration
 const allowedOrigins = [
   "https://alankrithanaturals.vercel.app", // production frontend
-  "http://localhost:5173",                 // local Vite dev
+  "http://localhost:5173",
+  "http://localhost:3000",                 // local Vite dev
 ];
 
 app.use(
